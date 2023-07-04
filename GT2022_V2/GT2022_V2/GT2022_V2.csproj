@@ -1,0 +1,668 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0A45F40B-3EF4-497E-A7A5-4F9033AC1368}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GT2022_V2</RootNamespace>
+    <AssemblyName>GT2022_V2</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ivi.Visa, Version=5.8.0.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\IVI Foundation\VISA\Microsoft.NET\Framework32\v2.0.50727\VISA.NET Shared Components 5.8.0\Ivi.Visa.dll</HintPath>
+    </Reference>
+    <Reference Include="NationalInstruments.Visa, Version=17.5.0.49152, Culture=neutral, PublicKeyToken=2eaa5af0834e221d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\IVI Foundation\VISA\Microsoft.NET\Framework32\v4.0.30319\NI VISA.NET 17.5\NationalInstruments.Visa.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CSDL\CSDL_Radar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CSDL\CSDL_Radar.Designer.cs">
+      <DependentUpon>CSDL_Radar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CSDL\CSDL_Radars.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CSDL\CSDL_Radars.Designer.cs">
+      <DependentUpon>CSDL_Radars.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Devices\DL550.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Devices\DL550.Designer.cs">
+      <DependentUpon>DL550.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Devices\DSOX2022A.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Devices\DSOX2022A.Designer.cs">
+      <DependentUpon>DSOX2022A.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Devices\TTi_1908P.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Devices\TTi_1908P.Designer.cs">
+      <DependentUpon>TTi_1908P.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interface.Designer.cs">
+      <DependentUpon>Interface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User_Colchuga\user_colchuga_MP1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Colchuga\user_colchuga_MP1.Designer.cs">
+      <DependentUpon>user_colchuga_MP1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_Colchuga\User_RD01_K21.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Colchuga\User_RD01_K21.Designer.cs">
+      <DependentUpon>User_RD01_K21.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_Colchuga\User_RD01_K23.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Colchuga\User_RD01_K23.Designer.cs">
+      <DependentUpon>User_RD01_K23.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_Colchuga\User_RD01_K29.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Colchuga\User_RD01_K29.Designer.cs">
+      <DependentUpon>User_RD01_K29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_Colchuga\User_RD01_MP10.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Colchuga\User_RD01_MP10.Designer.cs">
+      <DependentUpon>User_RD01_MP10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_Colchuga\User_RD01_MP2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Colchuga\User_RD01_MP2.Designer.cs">
+      <DependentUpon>User_RD01_MP2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_Colchuga\User_RD01_MP5.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Colchuga\User_RD01_MP5.Designer.cs">
+      <DependentUpon>User_RD01_MP5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_Colchuga\User_RD01_MP6.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Colchuga\User_RD01_MP6.Designer.cs">
+      <DependentUpon>User_RD01_MP6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_Colchuga\User_RD01_MP8.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Colchuga\User_RD01_MP8.Designer.cs">
+      <DependentUpon>User_RD01_MP8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_Colchuga\User_RD01_PS224.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Colchuga\User_RD01_PS224.Designer.cs">
+      <DependentUpon>User_RD01_PS224.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_Colchuga\User_RD01_PS246.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Colchuga\User_RD01_PS246.Designer.cs">
+      <DependentUpon>User_RD01_PS246.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD02\User_RD02_BPI27V25.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD02\User_RD02_BPI27V25.Designer.cs">
+      <DependentUpon>User_RD02_BPI27V25.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD02\User_RD02_I3BB02.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD02\User_RD02_I3BB02.Designer.cs">
+      <DependentUpon>User_RD02_I3BB02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD02\User_RD02_I3BB03.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD02\User_RD02_I3BB03.Designer.cs">
+      <DependentUpon>User_RD02_I3BB03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD02\User_RD02_I3BV01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD02\User_RD02_I3BV01.Designer.cs">
+      <DependentUpon>User_RD02_I3BV01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD02\User_RD02_I3BV02.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD02\User_RD02_I3BV02.Designer.cs">
+      <DependentUpon>User_RD02_I3BV02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD02\User_RD02_I3BV03.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD02\User_RD02_I3BV03.Designer.cs">
+      <DependentUpon>User_RD02_I3BV03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD02\User_RD02_I3BV04.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD02\User_RD02_I3BV04.Designer.cs">
+      <DependentUpon>User_RD02_I3BV04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD02\User_RD02_I3BV05.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD02\User_RD02_I3BV05.Designer.cs">
+      <DependentUpon>User_RD02_I3BV05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD02\User_RD02_I3BV07.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD02\User_RD02_I3BV07.Designer.cs">
+      <DependentUpon>User_RD02_I3BV07.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD02\User_RD02_MP48.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD02\User_RD02_MP48.Designer.cs">
+      <DependentUpon>User_RD02_MP48.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_352EN1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_352EN1.Designer.cs">
+      <DependentUpon>User_RD03_352EN1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_352EN2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_352EN2.Designer.cs">
+      <DependentUpon>User_RD03_352EN2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_394BN57.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_394BN57.Designer.cs">
+      <DependentUpon>User_RD03_394BN57.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_I3BV03.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_I3BV03.Designer.cs">
+      <DependentUpon>User_RD03_I3BV03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_I3BV04.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_I3BV04.Designer.cs">
+      <DependentUpon>User_RD03_I3BV04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_I3BV06.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_I3BV06.Designer.cs">
+      <DependentUpon>User_RD03_I3BV06.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_I3BV07.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_I3BV07.Designer.cs">
+      <DependentUpon>User_RD03_I3BV07.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_I3BV13.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_I3BV13.Designer.cs">
+      <DependentUpon>User_RD03_I3BV13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_V3BN12.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_V3BN12.Designer.cs">
+      <DependentUpon>User_RD03_V3BN12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_V3BN15.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_V3BN15.Designer.cs">
+      <DependentUpon>User_RD03_V3BN15.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_V3BN17.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_V3BN17.Designer.cs">
+      <DependentUpon>User_RD03_V3BN17.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_V3BN32.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_V3BN32.Designer.cs">
+      <DependentUpon>User_RD03_V3BN32.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_V3BN72.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_V3BN72.Designer.cs">
+      <DependentUpon>User_RD03_V3BN72.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_V3BN77.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_V3BN77.Designer.cs">
+      <DependentUpon>User_RD03_V3BN77.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_V3UU01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_V3UU01.Designer.cs">
+      <DependentUpon>User_RD03_V3UU01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_V3UU07.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD03\User_RD03_V3UU07.Designer.cs">
+      <DependentUpon>User_RD03_V3UU07.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD04\User_RD04_CCS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD04\User_RD04_CCS.Designer.cs">
+      <DependentUpon>User_RD04_CCS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD04\User_RD04_CPS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD04\User_RD04_CPS.Designer.cs">
+      <DependentUpon>User_RD04_CPS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD04\User_RD04_DRI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD04\User_RD04_DRI.Designer.cs">
+      <DependentUpon>User_RD04_DRI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD04\User_RD04_SCS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD04\User_RD04_SCS.Designer.cs">
+      <DependentUpon>User_RD04_SCS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD04\User_RD04_SCP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD04\User_RD04_SCP.Designer.cs">
+      <DependentUpon>User_RD04_SCP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD05\User_RD05_B2EN10.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD05\User_RD05_B2EN10.Designer.cs">
+      <DependentUpon>User_RD05_B2EN10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD05\User_RD05_B2EN14.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD05\User_RD05_B2EN14.Designer.cs">
+      <DependentUpon>User_RD05_B2EN14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD05\User_RD05_B2EN15.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD05\User_RD05_B2EN15.Designer.cs">
+      <DependentUpon>User_RD05_B2EN15.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD05\User_RD05_B2EN16.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD05\User_RD05_B2EN16.Designer.cs">
+      <DependentUpon>User_RD05_B2EN16.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD05\User_RD05_B2EN17.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD05\User_RD05_B2EN17.Designer.cs">
+      <DependentUpon>User_RD05_B2EN17.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD05\User_RD05_B2EN4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD05\User_RD05_B2EN4.Designer.cs">
+      <DependentUpon>User_RD05_B2EN4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD05\User_RD05_B2EN3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD05\User_RD05_B2EN3.Designer.cs">
+      <DependentUpon>User_RD05_B2EN3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD05\User_RD05_B2EN5.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD05\User_RD05_B2EN5.Designer.cs">
+      <DependentUpon>User_RD05_B2EN5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD05\User_RD05_B2EN6.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD05\User_RD05_B2EN6.Designer.cs">
+      <DependentUpon>User_RD05_B2EN6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_RD05\User_RD05_B2EN7.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_RD05\User_RD05_B2EN7.Designer.cs">
+      <DependentUpon>User_RD05_B2EN7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XLTT\XLTT_Monitoring.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XLTT\XLTT_Monitoring.Designer.cs">
+      <DependentUpon>XLTT_Monitoring.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XLTT\XLTT__RelayControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XLTT\XLTT__RelayControl.Designer.cs">
+      <DependentUpon>XLTT__RelayControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CSDL\CSDL_Radar.resx">
+      <DependentUpon>CSDL_Radar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CSDL\CSDL_Radars.resx">
+      <DependentUpon>CSDL_Radars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Devices\DL550.resx">
+      <DependentUpon>DL550.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Devices\DSOX2022A.resx">
+      <DependentUpon>DSOX2022A.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Devices\TTi_1908P.resx">
+      <DependentUpon>TTi_1908P.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface.resx">
+      <DependentUpon>Interface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="User_Colchuga\user_colchuga_MP1.resx">
+      <DependentUpon>user_colchuga_MP1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Colchuga\User_RD01_K21.resx">
+      <DependentUpon>User_RD01_K21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Colchuga\User_RD01_K23.resx">
+      <DependentUpon>User_RD01_K23.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Colchuga\User_RD01_K29.resx">
+      <DependentUpon>User_RD01_K29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Colchuga\User_RD01_MP10.resx">
+      <DependentUpon>User_RD01_MP10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Colchuga\User_RD01_MP2.resx">
+      <DependentUpon>User_RD01_MP2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Colchuga\User_RD01_MP5.resx">
+      <DependentUpon>User_RD01_MP5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Colchuga\User_RD01_MP6.resx">
+      <DependentUpon>User_RD01_MP6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Colchuga\User_RD01_MP8.resx">
+      <DependentUpon>User_RD01_MP8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Colchuga\User_RD01_PS224.resx">
+      <DependentUpon>User_RD01_PS224.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Colchuga\User_RD01_PS246.resx">
+      <DependentUpon>User_RD01_PS246.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD02\User_RD02_BPI27V25.resx">
+      <DependentUpon>User_RD02_BPI27V25.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD02\User_RD02_I3BB02.resx">
+      <DependentUpon>User_RD02_I3BB02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD02\User_RD02_I3BB03.resx">
+      <DependentUpon>User_RD02_I3BB03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD02\User_RD02_I3BV01.resx">
+      <DependentUpon>User_RD02_I3BV01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD02\User_RD02_I3BV02.resx">
+      <DependentUpon>User_RD02_I3BV02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD02\User_RD02_I3BV03.resx">
+      <DependentUpon>User_RD02_I3BV03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD02\User_RD02_I3BV04.resx">
+      <DependentUpon>User_RD02_I3BV04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD02\User_RD02_I3BV05.resx">
+      <DependentUpon>User_RD02_I3BV05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD02\User_RD02_I3BV07.resx">
+      <DependentUpon>User_RD02_I3BV07.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD02\User_RD02_MP48.resx">
+      <DependentUpon>User_RD02_MP48.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD03\User_RD03_352EN1.resx">
+      <DependentUpon>User_RD03_352EN1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD03\User_RD03_352EN2.resx">
+      <DependentUpon>User_RD03_352EN2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD03\User_RD03_394BN57.resx">
+      <DependentUpon>User_RD03_394BN57.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD03\User_RD03_I3BV03.resx">
+      <DependentUpon>User_RD03_I3BV03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD03\User_RD03_I3BV04.resx">
+      <DependentUpon>User_RD03_I3BV04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD03\User_RD03_I3BV06.resx">
+      <DependentUpon>User_RD03_I3BV06.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD03\User_RD03_I3BV07.resx">
+      <DependentUpon>User_RD03_I3BV07.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD03\User_RD03_I3BV13.resx">
+      <DependentUpon>User_RD03_I3BV13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD03\User_RD03_V3BN12.resx">
+      <DependentUpon>User_RD03_V3BN12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD03\User_RD03_V3BN15.resx">
+      <DependentUpon>User_RD03_V3BN15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD03\User_RD03_V3BN17.resx">
+      <DependentUpon>User_RD03_V3BN17.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD03\User_RD03_V3BN32.resx">
+      <DependentUpon>User_RD03_V3BN32.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD03\User_RD03_V3BN72.resx">
+      <DependentUpon>User_RD03_V3BN72.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD03\User_RD03_V3BN77.resx">
+      <DependentUpon>User_RD03_V3BN77.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD03\User_RD03_V3UU01.resx">
+      <DependentUpon>User_RD03_V3UU01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD03\User_RD03_V3UU07.resx">
+      <DependentUpon>User_RD03_V3UU07.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD04\User_RD04_CCS.resx">
+      <DependentUpon>User_RD04_CCS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD04\User_RD04_CPS.resx">
+      <DependentUpon>User_RD04_CPS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD04\User_RD04_DRI.resx">
+      <DependentUpon>User_RD04_DRI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD04\User_RD04_SCP.resx">
+      <DependentUpon>User_RD04_SCP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD04\User_RD04_SCS.resx">
+      <DependentUpon>User_RD04_SCS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD05\User_RD05_B2EN10.resx">
+      <DependentUpon>User_RD05_B2EN10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD05\User_RD05_B2EN14.resx">
+      <DependentUpon>User_RD05_B2EN14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD05\User_RD05_B2EN15.resx">
+      <DependentUpon>User_RD05_B2EN15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD05\User_RD05_B2EN16.resx">
+      <DependentUpon>User_RD05_B2EN16.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD05\User_RD05_B2EN17.resx">
+      <DependentUpon>User_RD05_B2EN17.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD05\User_RD05_B2EN4.resx">
+      <DependentUpon>User_RD05_B2EN4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD05\User_RD05_B2EN3.resx">
+      <DependentUpon>User_RD05_B2EN3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD05\User_RD05_B2EN5.resx">
+      <DependentUpon>User_RD05_B2EN5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD05\User_RD05_B2EN6.resx">
+      <DependentUpon>User_RD05_B2EN6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_RD05\User_RD05_B2EN7.resx">
+      <DependentUpon>User_RD05_B2EN7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XLTT\XLTT_Monitoring.resx">
+      <DependentUpon>XLTT_Monitoring.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XLTT\XLTT__RelayControl.resx">
+      <DependentUpon>XLTT__RelayControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxFOXITREADERLib">
+      <Guid>{3A8BD65E-9922-4162-A649-83F2D5326BBE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="FOXITREADERLib">
+      <Guid>{3A8BD65E-9922-4162-A649-83F2D5326BBE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
